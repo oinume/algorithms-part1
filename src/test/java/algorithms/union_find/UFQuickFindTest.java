@@ -1,4 +1,4 @@
-package algorithm.union_find;
+package algorithms.union_find;
 
 import static org.junit.Assert.*;
 
