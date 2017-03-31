@@ -23,16 +23,23 @@ public class UFQuickFind implements UF {
 
     @Override
     public void union(int p, int q) {
-        data[p] = q;
+        int pvalue = data[p];
+        int qvalue = data[q];
         for (int i = 0; i < data.length; i++) {
-            if (data[i] == p) {
-                data[i] = q;
+            if (data[i] == pvalue) {
+                data[i] = qvalue;
             }
         }
     }
 
     @Override
     public String toString() {
-        return Arrays.toString(data);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < data.length; i++) {
+            sb.append(i).append('[').append(data[i]).append(']');
+            sb.append(", ");
+        }
+        //sb.delete()
+        return sb.toString();
     }
 }
